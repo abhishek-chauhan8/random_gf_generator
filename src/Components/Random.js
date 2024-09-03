@@ -6,16 +6,15 @@ const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
 const Random = () => {
   const [randomGif, setRandomGif] = useState("");
-
-  const[loading, setLoading] = useState('false');
+  const [loading, setLoading] = useState("false");
 
   async function fetchData() {
-    setLoading('true')
+    setLoading(true);
     const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
     const { data } = await axios.get(url);
     const imageUrl = data.data.images.downsized_medium.url;
-    setLoading('false');
     setRandomGif(imageUrl);
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -33,10 +32,15 @@ const Random = () => {
       </h1>
 
       <div>
-        {
-          loading === "true" ? (<Spinner/>) : ( <img src={randomGif} alt="Taken Away by aliens, trying to recover it" />)
-        }
-       
+        {loading ? (
+          <Spinner />
+        ) : (
+          <img
+            src={randomGif}
+            alt="Taken Away by aliens, trying to recover it"
+            height="200"
+          />
+        )}
       </div>
 
       <div className="px-[3.5rem] py-[1rem] border-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500  placeholder-gray-500"></div>
