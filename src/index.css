@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.spinner {
+   width: 11.2px;
+   height: 11.2px;
+   border-radius: 11.2px;
+   box-shadow: 28px 0px 0 0 rgba(154,154,244,0.2), 22.7px 16.5px 0 0 rgba(154,154,244,0.4), 8.68px 26.6px 0 0 rgba(154,154,244,0.6), -8.68px 26.6px 0 0 rgba(154,154,244,0.8), -22.7px 16.5px 0 0 #9a9af4;
+   animation: spinner-b87k6z 1s infinite linear;
+}
+
+@keyframes spinner-b87k6z {
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
