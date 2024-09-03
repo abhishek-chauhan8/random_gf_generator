@@ -22,7 +22,7 @@ const RandomBySearch = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  },[]);
 
   function clickHandler() {
     setOffset((prevOffset) => prevOffset + 1);
